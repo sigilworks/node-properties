@@ -2,20 +2,35 @@
   "name": "properties",
   "version": "1.2.1",
   "description": ".properties parser/stringifier",
-  "keywords": ["properties", "ini", "parser", "stringifier", "config"],
+  "keywords": [
+    "properties",
+    "ini",
+    "parser",
+    "stringifier",
+    "config"
+  ],
   "author": "Gabriel Llamas <gagle@outlook.com>",
   "repository": "git://github.com/gagle/node-properties.git",
   "engines": {
     "node": ">=0.10"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
     "ini": "1.1.x",
-    "speedy": "*",
-    "js-yaml": "2.1.x"
+    "istanbul": "^0.4.5",
+    "js-yaml": "2.1.x",
+    "mocha": "^4.0.1",
+    "speedy": "*"
   },
   "scripts": {
-    "test": "node test/parse && node test/stringify"
+    "test": "node_modules/.bin/mocha --recursive --reporter spec test/**/*.spec.js",
+    "test:watch": "node_modules/.bin/mocha --recursive --watch --reporter spec test/**/*.spec.js",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec --recursive test/**/*.spec.js",
+    "test:old": "node test/parse && node test/stringify"
   },
   "license": "MIT",
-  "main": "lib"
+  "main": "lib",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
 }

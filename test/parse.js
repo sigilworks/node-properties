@@ -8,7 +8,7 @@ var path = require ("path");
 process.chdir (path.dirname (process.mainModule.filename));
 
 var tests = {
-  "parse": function (done){
+/*  "parse": function (done){
     var options = { path: true };
     
     properties.parse ("properties", options, function (error, p){
@@ -53,8 +53,8 @@ var tests = {
       
       done ();
     });
-  },
-  "parse (no key, no value)": function (done){
+  },*/
+/*  "parse (no key, no value)": function (done){
     properties.parse (":", function (error, p){
       assert.ifError (error);
       
@@ -64,12 +64,12 @@ var tests = {
       
       done ();
     });
-  },
-  "parse (no json)": function (done){
+  },*/
+/*  "parse (no json)": function (done){
     properties.parse ("a1 true\na2 false\na3 123\na4 [1, 2, \\\n		" +
         "3]\na5 : { \"1\"\\\n		: { \"2\": 3 }}", function (error, p){
       assert.ifError (error);
-      
+
       assert.deepEqual (p, {
         a1: true,
         a2: false,
@@ -77,11 +77,11 @@ var tests = {
         a4: "[1, 2, 3]",
         a5: "{ \"1\": { \"2\": 3 }}",
       });
-      
+
       done ();
     });
-  },
-  "reviver": function (done){
+  },*/
+/*  "reviver": function (done){
     var options = {
       reviver: function (key, value){
         if (key === "a") return "b";
@@ -100,17 +100,17 @@ var tests = {
       
       done ();
     });
-  },
-  "empty data": function (done){
+  },*/
+/*  "empty data": function (done){
     properties.parse ("", function (error, p){
       assert.ifError (error);
-      
+
       assert.deepEqual (p, {});
-      
+
       done ();
     });
-  },
-  "custom separator and comment tokens": function (done){
+  },*/
+/*  "custom separator and comment tokens": function (done){
     var options = { comments: ";", separators: "-" };
     
     properties.parse (";a\n!a\na1:b\na2-b", options, function (error, p){
@@ -120,11 +120,11 @@ var tests = {
         a1: "b",
         a2: "b"
       });
-      
+
       done ();
     });
-  },
-  "custom separator and comment tokens, strict": function (done){
+  },*/
+/*  "custom separator and comment tokens, strict": function (done){
     var options = { comments: ";", separators: "-", strict: true };
     
     properties.parse (";a\n!a\na1:b\na2-b", options, function (error, p){
@@ -138,8 +138,8 @@ var tests = {
       
       done ();
     });
-  },
-  "sections": function (done){
+  },*/
+/*  "sections": function (done){
     var options = { sections: true, path: true };
     
     properties.parse ("sections", options, function (error, p){
@@ -167,7 +167,7 @@ var tests = {
       
       done ();
     });
-  },
+  },*/
   "sections, incomplete": function (done){
     var options = { sections: true, include: true };
     
@@ -594,6 +594,7 @@ var tests = {
     });
   }
 };
+/*
 
 var keys = Object.keys (tests);
 var keysLength = keys.length;
@@ -611,3 +612,4 @@ var keysLength = keys.length;
     }
   }
 })(0);
+*/
